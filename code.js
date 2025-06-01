@@ -12,4 +12,22 @@ const reverseString = (str) => {
   return str.split("").reverse().join("");
 };
 
-export { capitalize, reverseString };
+class Calculator {
+  // add(num1, num2) {
+  //   return num1 + num2;
+  // }
+
+  // subtract(num1, num2) {
+  //   return num1 - num2;
+  // }
+
+  // mulitply(num1, num2) {
+  //   return num1 * num2;
+  // }
+
+  // divide(num1, num2) {
+  //   return num1 / num2;
+  // }
+}
+
+export { capitalize, reverseString, Calculator };
