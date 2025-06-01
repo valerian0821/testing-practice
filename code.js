@@ -30,4 +30,8 @@ class Calculator {
   }
 }
 
-export { capitalize, reverseString, Calculator };
+const caesarCipher = () => {
+
+};
+
+export { capitalize, reverseString, Calculator, caesarCipher };
