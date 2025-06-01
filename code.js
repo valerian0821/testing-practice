@@ -76,6 +76,15 @@ const caesarCipher = (plainText, shiftFactor) => {
   return cipherTextArr.join("");
 };
 
-const analyzeArray = (arr) => {};
+const analyzeArray = (arr) => {
+  if (arr.length === 0) {
+    return { average: undefined, min: undefined, max: undefined, length: 0 };
+  }
+  let lengthVar = arr.length;
+  let averageVar = arr.reduce((acc, curr) => acc + curr, 0) / lengthVar;
+  let minVar = Math.min(...arr);
+  let maxVar = Math.max(...arr);
+  return { average: averageVar, min: minVar, max: maxVar, length: lengthVar };
+};
 
 export { capitalize, reverseString, Calculator, caesarCipher, analyzeArray };

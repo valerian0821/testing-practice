@@ -57,7 +57,7 @@ test("Cipher punctuation, spaces, other characters check", () => {
 });
 
 test("Analyze array empty array", () => {
-  expect(analyzeArray([])).toBe({
+  expect(analyzeArray([])).toStrictEqual({
     average: undefined,
     min: undefined,
     max: undefined,
@@ -66,7 +66,7 @@ test("Analyze array empty array", () => {
 });
 
 test("Analyze array non-empty array", () => {
-  expect(analyzeArray([1, 8, 3, 4, 2, 6])).toBe({
+  expect(analyzeArray([1, 8, 3, 4, 2, 6])).toStrictEqual({
     average: 4,
     min: 1,
     max: 8,
