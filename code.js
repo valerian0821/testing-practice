@@ -58,7 +58,10 @@ const caesarCipher = (plainText, shiftFactor) => {
         } else {
           cipherCharCode = cipherCharCode - 26;
         }
-      } else if (isLowerCase(char) && (cipherCharCode < 97 || cipherCharCode > 122)) {
+      } else if (
+        isLowerCase(char) &&
+        (cipherCharCode < 97 || cipherCharCode > 122)
+      ) {
         if (cipherCharCode < 97) {
           cipherCharCode = cipherCharCode + 26;
         } else {
@@ -73,4 +76,6 @@ const caesarCipher = (plainText, shiftFactor) => {
   return cipherTextArr.join("");
 };
 
-export { capitalize, reverseString, Calculator, caesarCipher };
+const analyzeArray = (arr) => {};
+
+export { capitalize, reverseString, Calculator, caesarCipher, analyzeArray };

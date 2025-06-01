@@ -1,4 +1,10 @@
-import { capitalize, reverseString, Calculator, caesarCipher } from "./code.js";
+import {
+  capitalize,
+  reverseString,
+  Calculator,
+  caesarCipher,
+  analyzeArray,
+} from "./code.js";
 
 test("Capitalize works", () => {
   expect(capitalize("tree")).toBe("Tree");
@@ -48,4 +54,22 @@ test("Cipher case preservation", () => {
 
 test("Cipher punctuation, spaces, other characters check", () => {
   expect(caesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
+});
+
+test("Analyze array empty array", () => {
+  expect(analyzeArray([])).toBe({
+    average: undefined,
+    min: undefined,
+    max: undefined,
+    length: 0,
+  });
+});
+
+test("Analyze array non-empty array", () => {
+  expect(analyzeArray([1, 8, 3, 4, 2, 6])).toBe({
+    average: 4,
+    min: 1,
+    max: 8,
+    length: 6,
+  });
 });
