@@ -30,8 +30,47 @@ class Calculator {
   }
 }
 
-const caesarCipher = () => {
+const isUpperCase = (char) => {
+  return /^[A-Z]$/.test(char);
+};
 
+const isLowerCase = (char) => {
+  return /^[a-z]$/.test(char);
+};
+
+const caesarCipher = (plainText, shiftFactor) => {
+  if (!plainText) {
+    return "";
+  }
+  if (shiftFactor === 0) {
+    return plainText;
+  }
+  let shift = shiftFactor % 26;
+  const plainTextArr = plainText.split("");
+  const cipherTextArr = [];
+  for (let char of plainTextArr) {
+    if (isUpperCase(char) || isLowerCase(char)) {
+      let charCode = char.charCodeAt(0);
+      let cipherCharCode = charCode + shift;
+      if (isUpperCase(char) && (cipherCharCode < 65 || cipherCharCode > 90)) {
+        if (cipherCharCode < 65) {
+          cipherCharCode = cipherCharCode + 26;
+        } else {
+          cipherCharCode = cipherCharCode - 26;
+        }
+      } else if (isLowerCase(char) && (cipherCharCode < 97 || cipherCharCode > 122)) {
+        if (cipherCharCode < 97) {
+          cipherCharCode = cipherCharCode + 26;
+        } else {
+          cipherCharCode = cipherCharCode - 26;
+        }
+      }
+      cipherTextArr.push(String.fromCharCode(cipherCharCode));
+    } else {
+      cipherTextArr.push(char);
+    }
+  }
+  return cipherTextArr.join("");
 };
 
 export { capitalize, reverseString, Calculator, caesarCipher };
