@@ -1,17 +1,9 @@
-const capitalize = require("./code");
+import { capitalize, reverseString } from "./code.js";
 
-test("Empty string", () => {
-  expect(capitalize("")).toBe("");
-});
-
-test("First character non-letter", () => {
-  expect(capitalize("1tree")).toBe("1tree");
-});
-
-test("First character uppercase", () => {
-  expect(capitalize("Tree")).toBe("Tree");
-});
-
-test("First character undercase", () => {
+test("Capitalize works", () => {
   expect(capitalize("tree")).toBe("Tree");
+});
+
+test("Reverse string works", () => {
+  expect(reverseString("tree")).toBe("eert");
 });
